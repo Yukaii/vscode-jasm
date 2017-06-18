@@ -1,0 +1,30 @@
+{
+    "name": "vscode-jasm",
+    "displayName": "vscode-jasm",
+    "description": "syntax highlight extension for Java Assembly Language(jasm)",
+    "version": "0.0.1",
+    "publisher": "Yukai",
+    "engines": {
+        "vscode": "^1.13.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Yukaii/vscode-jasm"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "jasm",
+            "aliases": ["Java Assembly(jasm)", "jasm"],
+            "extensions": [".jasm"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "jasm",
+            "scopeName": "source.jasm",
+            "path": "./syntaxes/jasm.tmLanguage.json"
+        }]
+    }
+}

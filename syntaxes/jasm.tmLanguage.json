@@ -1,0 +1,164 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Java Assembly Language",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "name": "support.constant",
+      "match": "[a-zA-Z$_][a-zA-Z0-9$_]*:"
+    },
+    {
+      "include": "#method-call"
+    },
+    {
+      "include": "#function-call"
+    }
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "entity.name.function.jasm",
+				"match": "\\b(aaload|aastore|aconst_null|aload_0|aload_1|aload_2|aload_3|areturn|arraylength|astore_0|astore_1|astore_2|astore_3|athrow|baload|bastore|caload|castore|d2f|d2i|d2l|dadd|daload|dastore|dcmpg|dcmpl|dconst_0|dconst_1|ddiv|dload_0|dload_1|dload_2|dload_3|dmul|dneg|drem|dreturn|dstore_0|dstore_1|dstore_2|dstore_3|dsub|dup|dup_x1|dup_x2|dup2|dup2_x1|dup2_x2|f2d|f2i|f2l|fadd|faload|fastore|fcmpg|fcmpl|fconst_0|fconst_1|fdiv|fload_0|fload_1|fload_2|fload_3|fmul|fneg|frem|freturn|fstore_0|fstore_1|fstore_2|fstore_3|fsub|i2b|i2c|i2d|i2f|i2l|i2s|iadd|iaload|iand|iastore|iconst_0|iconst_1|iconst_2|iconst_3|iconst_4|iconst_5|iconst_m1|idiv|iload_0|iload_1|iload_2|iload_3|imul|ineg|ior|irem|ireturn|ishl|ishr|istore_0|istore_1|istore_2|istore_3|isub|iushr|ixor|l2d|l2f|l2i|ladd|laload|land|lastore|lcmp|lconst_0|lconst_1|ldiv|lload_0|lload_1|lload_2|lload_3|lmul|lneg|lor|lrem|lreturn|lshl|lshr|lstore_0|lstore_1|lstore_2|lstore_3|lsub|lushr|lxor|monitorenter|monitorexit|nop|pop|pop2|return|saload|sastore|swap|wide|bipush|ldc|ldc_w|ldc2_w|sipush|getfield|getstatic|putfield|putstatic|invokeinterface|invokestatic|invokenonvirtual|invokevirtual|checkcast|instanceof|new|goto|goto_w|if_acmpeq|if_acmpne|if_icmpeq|if_icmpne|if_icmplt|if_icmpge|if_icmpgt|if_icmple|ifeq|ifne|iflt|ifge|ifgt|ifle|ifnonnull|ifnull|jsr|jsr_w|iload|fload|aload|lload|dload|istore|fstore|astore|lstore|dstore|ret|load|store|AALOAD|AASTORE|ACONST_NULL|ALOAD_0|ALOAD_1|ALOAD_2|ALOAD_3|ARETURN|ARRAYLENGTH|ASTORE_0|ASTORE_1|ASTORE_2|ASTORE_3|ATHROW|BALOAD|BASTORE|CALOAD|CASTORE|D2F|D2I|D2L|DADD|DALOAD|DASTORE|DCMPG|DCMPL|DCONST_0|DCONST_1|DDIV|DLOAD_0|DLOAD_1|DLOAD_2|DLOAD_3|DMUL|DNEG|DREM|DRETURN|DSTORE_0|DSTORE_1|DSTORE_2|DSTORE_3|DSUB|DUP|DUP_X1|DUP_X2|DUP2|DUP2_X1|DUP2_X2|F2D|F2I|F2L|FADD|FALOAD|FASTORE|FCMPG|FCMPL|FCONST_0|FCONST_1|FDIV|FLOAD_0|FLOAD_1|FLOAD_2|FLOAD_3|FMUL|FNEG|FREM|FRETURN|FSTORE_0|FSTORE_1|FSTORE_2|FSTORE_3|FSUB|I2B|I2C|I2D|I2F|I2L|I2S|IADD|IALOAD|IAND|IASTORE|ICONST_0|ICONST_1|ICONST_2|ICONST_3|ICONST_4|ICONST_5|ICONST_M1|IDIV|ILOAD_0|ILOAD_1|ILOAD_2|ILOAD_3|IMUL|INEG|IOR|IREM|IRETURN|ISHL|ISHR|ISTORE_0|ISTORE_1|ISTORE_2|ISTORE_3|ISUB|IUSHR|IXOR|L2D|L2F|L2I|LADD|LALOAD|LAND|LASTORE|LCMP|LCONST_0|LCONST_1|LDIV|LLOAD_0|LLOAD_1|LLOAD_2|LLOAD_3|LMUL|LNEG|LOR|LREM|LRETURN|LSHL|LSHR|LSTORE_0|LSTORE_1|LSTORE_2|LSTORE_3|LSUB|LUSHR|LXOR|MONITORENTER|MONITOREXIT|NOP|POP|POP2|RETURN|SALOAD|SASTORE|SWAP|WIDE|BIPUSH|LDC|LDC_W|LDC2_W|SIPUSH|GETFIELD|GETSTATIC|PUTFIELD|PUTSTATIC|INVOKEINTERFACE|INVOKESTATIC|INVOKENONVIRTUAL|INVOKEVIRTUAL|CHECKCAST|INSTANCEOF|NEW|GOTO|GOTO_W|IF_ACMPEQ|IF_ACMPNE|IF_ICMPEQ|IF_ICMPNE|IF_ICMPLT|IF_ICMPGE|IF_ICMPGT|IF_ICMPLE|IFEQ|IFNE|IFLT|IFGE|IFGT|IFLE|IFNONNULL|IFNULL|JSR|JSR_W|ILOAD|FLOAD|ALOAD|LLOAD|DLOAD|ISTORE|FSTORE|ASTORE|LSTORE|DSTORE|RET|LOAD|STORE)\\b"
+			}, {
+        "name":"entity.name.type",
+        "match": "\\b(byte|char|double|float|int|long|short|boolean|void)\\b"
+      }, {
+        "name": "storage.modifier.jasm",
+        "match": "\\b(private|protected|protected|public|static|abstract|final|transient|volatile|native|synchronized)\\b"
+      },{
+        "name":"storage.type",
+        "match": "\\b(class|interface)\\b"
+      }, {
+        "name": "entity.name.tag",
+        "match": ".+:\\b"
+      }]
+		},
+		"strings": {
+			"name": "string.quoted.double.jasm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.jasm",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment": {
+      "name": "comment.block",
+			"patterns": [
+				{
+					"name": "comment.block.documentation.jasm",
+					"begin": "/\\*\\*(?!/)",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.jasm"
+						}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.jasm"
+						}
+					}
+				},
+				{
+					"name": "comment.block.jasm",
+					"begin": "/\\*",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.jasm"
+						}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.jasm"
+						}
+					}
+				}
+			]
+    },
+		"numbers": {
+			"patterns": [
+				{
+					"match": "(?x)\n\\b(?<!\\$)\n0(x|X)\n(\n  (?<!\\.)[0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?[Ll]?(?!\\.)\n  |\n  (\n    [0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?\\.?\n    |\n    ([0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?)?\\.[0-9a-fA-F]([0-9a-fA-F_]*[0-9a-fA-F])?\n  )\n  [Pp][+-]?[0-9]([0-9_]*[0-9])?[FfDd]?\n)\n\\b(?!\\$)",
+					"name": "constant.numeric.hex.jasm"
+				},
+				{
+					"match": "\\b(?<!\\$)0(b|B)[01]([01_]*[01])?[Ll]?\\b(?!\\$)",
+					"name": "constant.numeric.binary.jasm"
+				},
+				{
+					"match": "\\b(?<!\\$)0[0-7]([0-7_]*[0-7])?[Ll]?\\b(?!\\$)",
+					"name": "constant.numeric.octal.jasm"
+				},
+				{
+					"match": "(?x)\n(?<!\\$)\n(\n  \\b[0-9]([0-9_]*[0-9])?\\.\\B(?!\\.)\n  |\n  \\b[0-9]([0-9_]*[0-9])?\\.([Ee][+-]?[0-9]([0-9_]*[0-9])?)[FfDd]?\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?\\.([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?\\.([0-9]([0-9_]*[0-9])?)([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]?\\b\n  |\n  (?<!\\.)\\B\\.[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]?\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)[FfDd]?\\b\n  |\n  \\b[0-9]([0-9_]*[0-9])?([Ee][+-]?[0-9]([0-9_]*[0-9])?)?[FfDd]\\b\n  |\n  \\b(0|[1-9]([0-9_]*[0-9])?)(?!\\.)[Ll]?\\b\n)\n(?!\\$)",
+					"name": "constant.numeric.decimal.jasm"
+				}
+			]
+		},
+		"method-call": {
+			"begin": "(\\.)\\s*([A-Za-z_$][\\w$]*)\\s*(\\()",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.separator.period.jasm"
+				},
+				"2": {
+					"name": "entity.name.function.jasm"
+				},
+				"3": {
+					"name": "punctuation.definition.parameters.begin.bracket.round.jasm"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.parameters.end.bracket.round.jasm"
+				}
+			},
+			"name": "meta.method-call.jasm",
+			"patterns": [
+				{
+					"include": "#string"
+				}
+			]
+		},
+		"function-call": {
+			"begin": "([A-Za-z0-9_$][\\w$]*)\\s*(\\()",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.function.jasm"
+				},
+				"2": {
+					"name": "punctuation.definition.parameters.begin.bracket.round.jasm"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.parameters.end.bracket.round.jasm"
+				}
+			},
+			"name": "meta.function-call.jasm",
+			"patterns": [
+				{
+					"include": "#strings"
+				}
+			]
+		}
+	},
+	"scopeName": "source.jasm"
+}
